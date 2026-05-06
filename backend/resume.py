@@ -4,7 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_classic.output_parsers import StructuredOutputParser, ResponseSchema
+from langchain_core.output_parsers import StructuredOutputParser, ResponseSchema
 from docx import Document
 import os
 load_dotenv()
