@@ -1,10 +1,10 @@
 from fastapi import FastAPI, UploadFile, File, Form
 import uvicorn
 from pydantic import BaseModel
-from resume import comparison_function
+from backend.resume import comparison_function
 import os
 from fastapi.middleware.cors import CORSMiddleware
-from constant import origins
+from backend.constant import origins
 
 app = FastAPI()
 
