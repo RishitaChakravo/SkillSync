@@ -2,15 +2,16 @@
 # resume -> technical skills, academic
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
-from constant import GROQ_API_KEY
+from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_classic.output_parsers import StructuredOutputParser, ResponseSchema
 from docx import Document
-
+import os
+load_dotenv()
 def get_chat():
     return ChatGroq(
         model="llama-3.3-70b-versatile",
-        api_key=GROQ_API_KEY
+        api_key=os.getenv("GROQ_API_KEY")
     )
 
 file_path = ""

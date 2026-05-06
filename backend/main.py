@@ -4,13 +4,14 @@ from pydantic import BaseModel
 from resume import comparison_function
 import os
 from fastapi.middleware.cors import CORSMiddleware
-from backend.constant import origins
+from dotenv import load_dotenv
 
+load_dotenv()
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=os.getenv("origins"),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
