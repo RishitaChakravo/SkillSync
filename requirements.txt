@@ -3,11 +3,10 @@ uvicorn[standard]==0.24.0
 pydantic==2.5.0
 python-dotenv==1.0.0
 python-multipart==0.0.6
-langchain-core==0.1.33
-langchain-groq==0.1.6
-langchain-community==0.0.24
-langchain==0.1.7
 pypdf==3.17.1
 python-docx==0.8.11
 requests==2.31.0
-aiofiles==23.2.1
+langchain-groq==0.0.2 
+langchain==0.1.14 
+langchain-core==0.1.45
+langchain-community==0.0.31
