@@ -2,7 +2,7 @@
 # resume -> technical skills, academic
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
-from backend.constant import GROQ_API_KEY
+from constant import GROQ_API_KEY
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_classic.output_parsers import StructuredOutputParser, ResponseSchema
 from docx import Document
