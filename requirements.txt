@@ -6,7 +6,7 @@ python-multipart==0.0.6
 pypdf==3.17.1
 python-docx==0.8.11
 requests==2.31.0
-langchain-groq==0.0.2 
+langchain-groq==0.0.1
 langchain==0.1.14 
 langchain-core==0.1.45
 langchain-community==0.0.31
