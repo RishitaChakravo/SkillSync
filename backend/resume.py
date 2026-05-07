@@ -6,7 +6,7 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.output_parsers import JsonOutputParser
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from docx import Document
 import os
 
@@ -20,17 +20,40 @@ def get_chat():
     )
 
 class ResumeSchema(BaseModel):
-    skills: list[str]
-    project: list[str]
-    experience: list[str]
-    academic: list[str]
 
+    skills: list[str] = Field(
+        description="List of all technical skills, tools, frameworks, and programming languages mentioned in the resume"
+    )
+
+    project: list[str] = Field(
+        description="List of projects with technologies used and short descriptions"
+    )
+
+    experience: list[str] = Field(
+        description="Work experience including role, company, industry, and years of experience"
+    )
+
+    academic: list[str] = Field(
+        description="Educational qualifications, degrees, colleges, and academic information"
+    )
 
 class ComparisonSchema(BaseModel):
-    match_percentage: str
-    matching_skills: list[str]
-    missing_skills: list[str]
-    suggestions: str
+
+    match_percentage: str = Field(
+        description="Percentage match between resume and job description"
+    )
+
+    matching_skills: list[str] = Field(
+        description="Skills present in both the resume and job description"
+    )
+
+    missing_skills: list[str] = Field(
+        description="Skills required in the job description but missing in the resume"
+    )
+
+    suggestions: list[str] = Field(
+        description="Suggestions to improve the resume based on the job description"
+    )
 
 output_parser = JsonOutputParser(
     pydantic_object=ResumeSchema
